@@ -1,525 +1,858 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ Biodata Mahasiswa — Pixel Edition ✨</title>
-    <!-- Google Fonts: Pixelify Sans & VT323 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        pixel: ['"Pixelify Sans"', 'cursive'],
-                        retro: ['"VT323"', 'monospace'],
-                    },
-                    colors: {
-                        pixel: {
-                            bg: '#fdf4ff',
-                            dark: '#1e1b4b',
-                            pink: '#f472b6',
-                            lightpink: '#fce7f3',
-                            purple: '#a855f7',
-                            lightpurple: '#f3e8ff',
-                            yellow: '#fde047',
-                            lightyellow: '#fef9c3',
-                            green: '#4ade80',
-                            lightgreen: '#dcfce7',
-                            cyan: '#38bdf8',
-                            lightcyan: '#e0f2fe',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        /* Pixel Border & Shadow Utilities */
-        .pixel-card {
-            background-color: #ffffff;
-            border: 4px solid #1e1b4b;
-            box-shadow: 6px 6px 0px #1e1b4b;
-        }
-        .pixel-card-sm {
-            border: 3px solid #1e1b4b;
-            box-shadow: 4px 4px 0px #1e1b4b;
-        }
-        .pixel-btn {
-            border: 3px solid #1e1b4b;
-            box-shadow: 4px 4px 0px #1e1b4b;
-            transition: transform 0.08s ease, box-shadow 0.08s ease;
-        }
-        .pixel-btn:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px #1e1b4b;
-        }
-        .pixel-btn:active {
-            transform: translate(3px, 3px);
-            box-shadow: 1px 1px 0px #1e1b4b;
-        }
-        .pixel-tag {
-            border: 2px solid #1e1b4b;
-            box-shadow: 2px 2px 0px #1e1b4b;
-        }
-        
-        /* Retro Pixel Background Pattern */
-        body {
-            background-color: #fdf4ff;
-            background-image: 
-                radial-gradient(#d8b4fe 1.5px, transparent 1.5px),
-                radial-gradient(#f472b6 1.5px, #fdf4ff 1.5px);
-            background-size: 28px 28px;
-            background-position: 0 0, 14px 14px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website Biodata Diri (Personal Profile) modern, responsif, dan rapi dari Nabila Revalia Andini yang dibangun menggunakan HTML, CSS, dan JavaScript.">
+  <meta name="author" content="Nabila Revalia Andini">
+  <title>Biodata Diri | Nabila Revalia Andini</title>
 
-        /* Pixel Avatar floating animation */
-        @keyframes pixel-bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-        .animate-pixel-float {
-            animation: pixel-bounce 2.2s infinite ease-in-out;
-        }
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
-        /* Custom scrollbar retro */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #fdf4ff;
-            border-left: 2px solid #1e1b4b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #a855f7;
-            border: 2px solid #1e1b4b;
-        }
-    </style>
+  <!-- Font Awesome 6 (Ikon Modern) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- File CSS Utama -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-pixel text-slate-900 min-h-screen flex flex-col justify-between selection:bg-pixel-yellow selection:text-pixel-dark">
+<body>
 
-    <!-- Navbar Retro Pixel -->
-    <header class="sticky top-0 z-50 bg-white/95 border-b-4 border-pixel-dark backdrop-blur-xs">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-pixel-yellow border-3 border-pixel-dark flex items-center justify-center text-xl shadow-[2px_2px_0px_#1e1b4b]">
-                    🎮
-                </div>
-                <div>
-                    <h1 class="text-lg sm:text-xl font-bold tracking-wider leading-none text-pixel-dark">
-                        MY BIODATA.EXE
-                    </h1>
-                    <span class="text-xs text-purple-700 font-semibold tracking-wide flex items-center gap-1">
-                        <span class="inline-block w-2 h-2 bg-pixel-green border border-pixel-dark animate-ping"></span>
-                        PLAYER 1 READY
-                    </span>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-2.5">
-                <button onclick="playRetroSound(); window.print();" class="pixel-btn bg-pixel-lightpink hover:bg-pink-200 px-3 py-1.5 text-xs sm:text-sm font-bold text-pixel-dark flex items-center gap-1.5 cursor-pointer">
-                    <span>🖨️</span>
-                    <span>PRINT</span>
-                </button>
-            </div>
+  <!-- ======================================================================
+       HEADER & NAVBAR STICKY
+       ====================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <!-- Logo / Identitas Brand -->
+      <a href="#beranda" class="nav-brand" aria-label="Beranda Biodata Diri">
+        <div class="brand-icon" style="background: radial-gradient(circle at 35% 35%, #374151, #0f172a); font-size: 1.25rem;">
+          🎱
         </div>
-    </header>
+        <span>Billiard<span class="brand-accent">Profile</span></span>
+      </a>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-8 flex-1">
+      <!-- Tombol Hamburger (Layar HP) -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Buka Menu Navigasi" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
 
-        <!-- Banner Selamat Datang / RPG Status Bar -->
-        <div class="pixel-card bg-pixel-lightyellow p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <span class="text-3xl animate-pulse">👾</span>
-                <div>
-                    <p class="text-xs sm:text-sm font-bold text-purple-900 tracking-wide uppercase">
-                        ★ WELCOME TO MY PROFILE ★
-                    </p>
-                    <p class="text-xs text-slate-700">Level 20 • Mahasiswa Sosial Ekonomi Perikanan</p>
-                </div>
-            </div>
+      <!-- Menu Navigasi Utama -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#beranda" class="nav-link active">Beranda</a>
+        <a href="#game-billiard" class="nav-link">Mini Game</a>
+        <a href="#biodata" class="nav-link">Biodata</a>
+        <a href="#hobi" class="nav-link">Hobi</a>
+        <a href="#rumah" class="nav-link">Rumah Saya</a>
+        <a href="#video" class="nav-link">Video</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+    </div>
+  </header>
 
-            <!-- Health & Mana Bars (Cute detail) -->
-            <div class="flex flex-col gap-1.5 w-full sm:w-64 text-[11px] font-bold">
-                <div class="flex items-center gap-2">
-                    <span class="w-6 text-red-500">HP</span>
-                    <div class="flex-1 bg-white border-2 border-pixel-dark h-3.5 p-0.5">
-                        <div class="bg-red-400 h-full w-[95%]"></div>
-                    </div>
-                    <span class="text-[10px]">95/100</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <span class="w-6 text-blue-500">MP</span>
-                    <div class="flex-1 bg-white border-2 border-pixel-dark h-3.5 p-0.5">
-                        <div class="bg-pixel-cyan h-full w-[88%]"></div>
-                    </div>
-                    <span class="text-[10px]">88/100</span>
-                </div>
-            </div>
+  <main>
+    <!-- ====================================================================
+         1. BERANDA (HERO SECTION - MODEL BILLIARD GAME)
+         ==================================================================== -->
+    <section class="hero-section" id="beranda">
+      <!-- Ornamen Latar Belakang -->
+      <div class="hero-bg-circle hero-bg-circle-1"></div>
+      <div class="hero-bg-circle hero-bg-circle-2"></div>
+
+      <div class="container hero-content">
+        <!-- Billiard HUD Badge Player 1 -->
+        <div class="billiard-hud-badge reveal">
+          <span class="billiard-player-tag">PLAYER 1</span>
+          <span>🎱 8-BALL CHAMPION • LEVEL 20</span>
         </div>
 
-        <!-- Section 1: Biodata Diri -->
-        <section class="pixel-card p-6 sm:p-8 space-y-6">
+        <!-- Foto Profil Bulat dengan Bingkai Stik Biliar & Bola 8 -->
+        <div class="hero-avatar-wrapper reveal">
+          <div class="billiard-avatar-frame">
+            <div class="billiard-cue-left"></div>
+            <div class="billiard-cue-right"></div>
+            <div class="hero-avatar-ring">
+              <!-- 
+                GANTI FOTO PROFIL: 
+                Letakkan file foto Anda di dalam folder: assets/foto_profil.jpg
+                Jika belum ada, sistem secara otomatis memakai cadangan assets/foto_profil.svg
+              -->
+              <img 
+                src="assets/foto_profil.jpg" 
+                alt="Foto Profil Nabila Revalia Andini" 
+                class="hero-avatar-img"
+                onerror="this.onerror=null; this.src='assets/foto_profil.svg';"
+              >
+            </div>
+            <!-- Bola 8 Mengapung di Pojok Foto -->
+            <div class="billiard-ball ball-8 billiard-ball-float" title="8-Ball Magic">
+              <span class="ball-num">8</span>
+            </div>
+          </div>
+          <div class="hero-badge-status" title="Status: Online & Siap Main"></div>
+        </div>
+
+        <!-- Sapaan & Nama Lengkap -->
+        <div class="hero-greeting reveal delay-1">
+          <i class="fa-solid fa-crown text-warning"></i>
+          <span>Selamat Datang di Arena Profil Saya!</span>
+        </div>
+
+        <h1 class="hero-name reveal delay-1">
+          Saya <span>Nabila Revalia Andini</span>
+        </h1>
+
+        <!-- Tagline Singkat -->
+        <p class="hero-tagline reveal delay-2">
+          Mahasiswa S1 Sosial Ekonomi Perikanan Universitas Lambung Mangkurat | NIM 2410715120009
+        </p>
+
+        <!-- Tombol Aksi Hero -->
+        <div class="hero-actions reveal delay-3">
+          <a href="#game-billiard" class="btn btn-primary">
+            <span>🎯 Mainkan Mini Game</span>
+            <i class="fa-solid fa-gamepad"></i>
+          </a>
+          <a href="#biodata" class="btn btn-outline">
+            <i class="fa-solid fa-id-card"></i>
+            <span>Statistik Biodata</span>
+          </a>
+          <a href="#kontak" class="btn btn-outline">
+            <i class="fa-regular fa-paper-plane"></i>
+            <span>Tantang / Kontak</span>
+          </a>
+        </div>
+
+        <!-- Player Stat Bar HUD -->
+        <div class="player-stats-row reveal delay-4">
+          <div class="player-stat-box">
+            <span class="player-stat-label">Akurasi Strategi</span>
+            <span class="player-stat-value">99%</span>
+            <div class="stat-bar-outer"><div class="stat-bar-inner" style="width: 99%;"></div></div>
+          </div>
+          <div class="player-stat-box">
+            <span class="player-stat-label">Fokus & Konsistensi</span>
+            <span class="player-stat-value">100%</span>
+            <div class="stat-bar-outer"><div class="stat-bar-inner" style="width: 100%;"></div></div>
+          </div>
+          <div class="player-stat-box">
+            <span class="player-stat-label">Target Karir (Goal)</span>
+            <span class="player-stat-value">PNS (100%)</span>
+            <div class="stat-bar-outer"><div class="stat-bar-inner" style="width: 100%; background: linear-gradient(90deg, #10b981, #34d399);"></div></div>
+          </div>
+        </div>
+
+        <!-- Badges Cepat -->
+        <div class="hero-badges-row reveal delay-4">
+          <span class="hero-pill"><i class="fa-solid fa-location-dot"></i> Banjarbaru, Kalsel</span>
+          <span class="hero-pill"><i class="fa-solid fa-graduation-cap"></i> Mahasiswa Aktif ULM</span>
+          <span class="hero-pill"><i class="fa-solid fa-certificate"></i> S1 Sosio-Ekonomi Perikanan</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         INTERACTIVE BILLIARD TABLE MINI-GAME
+         ==================================================================== -->
+    <section class="billiard-game-section" id="game-billiard">
+      <div class="container">
+        <!-- Judul Section -->
+        <div class="section-header reveal">
+          <span class="section-badge section-badge-billiard"><i class="fa-solid fa-bowling-ball"></i> Arena Interaktif</span>
+          <h2 class="section-title" style="color: #ffffff;">Meja Billiard Nabila</h2>
+          <p class="section-subtitle" style="color: #bfdbfe;">
+            Coba keahlian membidik Anda di meja biliar ini! Klik atau sentuh bola putih (cue ball), tarik ke belakang untuk mengatur tenaga pukulan, lalu lepaskan untuk menyodok bola ke dalam lubang.
+          </p>
+          <div class="title-underline"></div>
+        </div>
+
+        <!-- HUD Bar Skor Game -->
+        <div class="game-hud-bar reveal delay-1">
+          <div class="game-scores-group">
+            <div class="game-score-item">
+              <span>Bola Masuk:</span>
+              <strong id="gameScorePockets">0 / 8</strong>
+            </div>
+            <div class="game-score-item">
+              <span>Pukulan:</span>
+              <strong id="gameScoreShots">0</strong>
+            </div>
+            <div class="game-score-item">
+              <span>Status:</span>
+              <span id="gameStatusText" style="color: #60a5fa; font-weight: 700;">Siap Menyodok</span>
+            </div>
+          </div>
+
+          <div class="game-controls-group">
+            <button class="btn-game btn-game-rack" id="btnRackBalls" title="Tata Ulang Semua Bola">
+              <i class="fa-solid fa-rotate-right"></i>
+              <span>Tata Ulang Meja</span>
+            </button>
+            <button class="btn-game btn-game-sound" id="btnToggleSound" title="Aktifkan / Bisukan Suara">
+              <i class="fa-solid fa-volume-high" id="soundIcon"></i>
+              <span id="soundLabel">Suara: ON</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Meja Biliar Visual & Canvas Physics -->
+        <div class="billiard-table-wrapper reveal delay-2">
+          <div class="billiard-canvas-container">
+            <canvas id="billiardCanvas" width="800" height="440"></canvas>
+          </div>
+        </div>
+
+        <!-- Tips Cara Main -->
+        <div class="game-instruction-bar reveal delay-3">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span><strong>Tips:</strong> Klik & seret bola putih untuk mengarahkan stik biliar, amati garis bidik putus-putus, lalu lepas untuk menembak!</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. BIODATA DIRI
+         ==================================================================== -->
+    <section class="section-padding section-bg-alt" id="biodata">
+      <div class="container">
+        <!-- Judul Section -->
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fa-regular fa-address-card"></i> Profil Lengkap</span>
+          <h2 class="section-title">Biodata Diri</h2>
+          <p class="section-subtitle">
+            Rangkuman informasi data diri, riwayat pendidikan, dan kontak resmi saya secara lengkap dan rapi.
+          </p>
+          <div class="title-underline"></div>
+        </div>
+
+        <!-- Kartu Rincian Biodata (2 Kolom) -->
+        <div class="biodata-grid">
+          <!-- Kolom 1: Data Pribadi -->
+          <div class="biodata-card reveal delay-1">
+            <div class="card-header-bar">
+              <div class="card-header-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <h3 class="card-header-title">Data Pribadi</h3>
+            </div>
             
-            <!-- Header Kartu -->
-            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-6 border-b-4 border-dashed border-purple-200">
-                <!-- Cute Pixel Avatar -->
-                <div class="relative animate-pixel-float">
-                    <div class="w-32 h-32 sm:w-36 sm:h-36 bg-pixel-lightcyan border-4 border-pixel-dark shadow-[4px_4px_0px_#1e1b4b] overflow-hidden flex items-center justify-center p-2">
-                        <!-- Cute Pixel Art Avatar Generator -->
-                        <img 
-                            src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Rizky&backgroundColor=b6e3f4" 
-                            alt="Pixel Avatar" 
-                            class="w-full h-full object-contain [image-rendering:pixelated]"
-                        >
-                    </div>
-                    <span class="pixel-tag absolute -bottom-2 -right-2 bg-pixel-green px-2 py-0.5 text-[10px] font-bold text-pixel-dark flex items-center gap-1">
-                        <span>★</span> AKTIF
-                    </span>
+            <div class="biodata-list">
+              <!-- Nama Lengkap -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-1" title="Bola 1"><span class="ball-num">1</span></div>
+                <div class="item-content">
+                  <span class="item-label">Nama Lengkap</span>
+                  <span class="item-value">Nabila Revalia Andini</span>
                 </div>
+              </div>
 
-                <div class="space-y-2 text-center sm:text-left flex-1">
-                    <div class="inline-block pixel-tag bg-pixel-pink text-white px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider mb-1">
-                        Character Card
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-wide text-pixel-dark">
-                        NABILA REVALIA ANDINI
-                    </h2>
-                    <p class="text-sm font-semibold text-purple-700">
-                        🎓 Mahasiswa S1 Sosial Ekonomi Perikanan — Universitas Lambung Mangkurat
-                    </p>
-                    <p class="text-xs text-slate-600 font-retro text-base tracking-wide leading-snug">
-                        
-                    </p>
+              <!-- Nama Panggilan -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-2" title="Bola 2"><span class="ball-num">2</span></div>
+                <div class="item-content">
+                  <span class="item-label">Nama Panggilan</span>
+                  <span class="item-value">Nabila</span>
                 </div>
+              </div>
+
+              <!-- Tempat, Tanggal Lahir -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-3" title="Bola 3"><span class="ball-num">3</span></div>
+                <div class="item-content">
+                  <span class="item-label">Tempat, Tanggal Lahir</span>
+                  <span class="item-value">Banjarbaru, 28 April 2006</span>
+                </div>
+              </div>
+
+              <!-- Jenis Kelamin -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-4" title="Bola 4"><span class="ball-num">4</span></div>
+                <div class="item-content">
+                  <span class="item-label">Jenis Kelamin</span>
+                  <span class="item-value">Perempuan</span>
+                </div>
+              </div>
+
+              <!-- Agama -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-5" title="Bola 5"><span class="ball-num">5</span></div>
+                <div class="item-content">
+                  <span class="item-label">Agama</span>
+                  <span class="item-value">Islam</span>
+                </div>
+              </div>
+
+              <!-- Alamat Lengkap -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-6" title="Bola 6"><span class="ball-num">6</span></div>
+                <div class="item-content">
+                  <span class="item-label">Alamat Lengkap</span>
+                  <span class="item-value">Komp. Pondok Kopi No. 6B JL. RO. Ulin Loktabat Selatan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Pendidikan, Kontak, & Impian -->
+          <div class="biodata-card reveal delay-2">
+            <div class="card-header-bar">
+              <div class="card-header-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <h3 class="card-header-title">Pendidikan & Target Goal</h3>
             </div>
 
-            <!-- Grid Rincian Data Diri -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                
-                <!-- Nama Lengkap -->
-                <div class="pixel-card-sm bg-pixel-lightpink/40 p-4 flex items-start gap-3">
-                    <span class="text-2xl">👤</span>
-                    <div>
-                        <span class="text-[11px] font-bold text-pink-700 uppercase tracking-wider block">NAMA LENGKAP</span>
-                        <span class="text-sm sm:text-base font-bold text-pixel-dark">Nabila Revalia Andini</span>
-                    </div>
+            <div class="biodata-list">
+              <!-- Sekolah / Kampus -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-7" title="Bola 7"><span class="ball-num">7</span></div>
+                <div class="item-content">
+                  <span class="item-label">Sekolah / Kampus</span>
+                  <span class="item-value">Universitas Lambung Mangkurat</span>
                 </div>
+              </div>
 
-                <!-- Tempat, Tanggal Lahir (TTL) -->
-                <div class="pixel-card-sm bg-pixel-lightyellow/50 p-4 flex items-start gap-3">
-                    <span class="text-2xl">🎂</span>
-                    <div>
-                        <span class="text-[11px] font-bold text-amber-700 uppercase tracking-wider block">TEMPAT, TANGGAL LAHIR</span>
-                        <span class="text-sm sm:text-base font-bold text-pixel-dark">Banjarbaru, 28 April 2006</span>
-                    </div>
+              <!-- Kelas / Jurusan -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-8" title="Bola 8"><span class="ball-num">8</span></div>
+                <div class="item-content">
+                  <span class="item-label">Jurusan &amp; NIM</span>
+                  <span class="item-value">S1 Sosial Ekonomi Perikanan (NIM: 2410715120009)</span>
                 </div>
+              </div>
 
-                <!-- Jenis Kelamin -->
-                <div class="pixel-card-sm bg-pixel-lightcyan/50 p-4 flex items-start gap-3">
-                    <span class="text-2xl">⚡</span>
-                    <div>
-                        <span class="text-[11px] font-bold text-sky-700 uppercase tracking-wider block">JENIS KELAMIN</span>
-                        <span class="text-sm sm:text-base font-bold text-pixel-dark">Perempuan</span>
-                    </div>
+              <!-- Email -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-9" title="Bola 9"><span class="ball-num">9</span></div>
+                <div class="item-content">
+                  <span class="item-label">Alamat Email</span>
+                  <span class="item-value">nabilaravalia008@gmail.com</span>
                 </div>
+              </div>
 
-                <!-- Agama -->
-                <div class="pixel-card-sm bg-pixel-lightgreen/50 p-4 flex items-start gap-3">
-                    <span class="text-2xl">🕌</span>
-                    <div>
-                        <span class="text-[11px] font-bold text-emerald-700 uppercase tracking-wider block">AGAMA</span>
-                        <span class="text-sm sm:text-base font-bold text-pixel-dark">Islam</span>
-                    </div>
+              <!-- Nomor HP / WhatsApp -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-10" title="Bola 10"><span class="ball-num">10</span></div>
+                <div class="item-content">
+                  <span class="item-label">No. HP / WhatsApp</span>
+                  <span class="item-value">087846312497</span>
                 </div>
+              </div>
 
-                <!-- Pendidikan -->
-                <div class="pixel-card-sm bg-white p-4 md:col-span-2 space-y-3">
-                    <div class="flex items-center gap-2">
-                        <span class="text-2xl">🏫</span>
-                        <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">RIWAYAT PENDIDIKAN</span>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        <div class="pixel-tag bg-purple-50 p-3">
-                            <span class="text-[10px] font-bold text-purple-600 block">KULIAH (AKTIF)</span>
-                            <span class="font-bold text-xs sm:text-sm text-pixel-dark block">S1 Sosial Ekonomi Perikanan</span>
-                            <span class="text-[11px] text-slate-500">Universitas Lambung Mangkurat</span>
-                        </div>
-                        <div class="pixel-tag bg-pink-50 p-3">
-                            <span class="text-[10px] font-bold text-pink-600 block">SMA (2021-2024)</span>
-                            <span class="font-bold text-xs sm:text-sm text-pixel-dark block">SMAN 1 Banjarbaru</span>
-                            <span class="text-[11px] text-slate-500">Jurusan IPS</span>
-                        </div>
-                        <div class="pixel-tag bg-yellow-50 p-3">
-                            <span class="text-[10px] font-bold text-amber-600 block">SMP (2018-2021)</span>
-                            <span class="font-bold text-xs sm:text-sm text-pixel-dark block">SMP Negeri 1 Banjarbaru</span>
-                            <span class="text-[11px] text-slate-500">Lulus</span>
-                        </div>
-                    </div>
+              <!-- Cita-cita -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-11" title="Bola 11"><span class="ball-num">11</span></div>
+                <div class="item-content">
+                  <span class="item-label">Cita-cita</span>
+                  <span class="item-value">PNS (Pegawai Negeri Sipil)</span>
                 </div>
+              </div>
 
-                <!-- Alamat -->
-                <div class="pixel-card-sm bg-pixel-lightpurple/40 p-4 md:col-span-2 flex items-start gap-3">
-                    <span class="text-2xl">📍</span>
-                    <div>
-                        <span class="text-[11px] font-bold text-purple-700 uppercase tracking-wider block">ALAMAT LENGKAP</span>
-                        <span class="text-xs sm:text-sm font-bold text-pixel-dark leading-relaxed">
-                            Komp. Pondok Kopi NO. 6B, JL.RO.Ulin Kel. Loktabat Selatan, Kec. Banjarbaru Selatan
-                        </span>
-                    </div>
+              <!-- Status Aktivitas -->
+              <div class="biodata-item">
+                <div class="billiard-ball ball-12" title="Bola 12"><span class="ball-num">12</span></div>
+                <div class="item-content">
+                  <span class="item-label">Status Saat Ini</span>
+                  <span class="item-value">Mahasiswa Aktif</span>
                 </div>
-
-                <!-- Email -->
-                <div class="pixel-card-sm bg-white p-4 flex items-start gap-3">
-                    <span class="text-2xl">💌</span>
-                    <div>
-                        <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">EMAIL</span>
-                        <a href="mailto:nabilaravalia008@gmail.com" class="text-xs sm:text-sm font-bold text-purple-600 hover:text-pink-600 underline">
-                            nabilaravalia008@gmail.com
-                        </a>
-                    </div>
-                </div>
-
-                <!-- No Telepon -->
-                <div class="pixel-card-sm bg-white p-4 flex items-start gap-3">
-                    <span class="text-2xl">📱</span>
-                    <div>
-                        <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">NO. TELP / WHATSAPP</span>
-                        <a href="tel:+6281234567890" class="text-xs sm:text-sm font-bold text-emerald-600 hover:text-emerald-700 underline">
-                            +62 878-4631-2497
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Hobi -->
-                <div class="pixel-card-sm bg-pixel-lightyellow/40 p-4 md:col-span-2 space-y-2">
-                    <div class="flex items-center gap-2">
-                        <span class="text-2xl">🎯</span>
-                        <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">HOBI & KEGEMARAN</span>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-1">
-                        <span class="pixel-tag bg-white hover:bg-pink-100 text-xs font-bold px-3 py-1 text-pixel-dark cursor-pointer transition">
-                            📷 Fotografi
-                        </span>
-                        <span class="pixel-tag bg-white hover:bg-yellow-100 text-xs font-bold px-3 py-1 text-pixel-dark cursor-pointer transition">
-                            💻 Menonton Film 
-                        </span>
-                        <span class="pixel-tag bg-white hover:bg-cyan-100 text-xs font-bold px-3 py-1 text-pixel-dark cursor-pointer transition">
-                            📚 Membaca Buku
-                        </span>
-                    </div>
-                </div>
-
+              </div>
             </div>
-        </section>
-
-        <!-- Section 2: Galeri Foto Rumah (Depan, Belakang, Kiri, Kanan) -->
-        <section class="pixel-card p-6 sm:p-8 space-y-6">
-            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b-4 border-dashed border-purple-200">
-                <div class="flex items-center gap-3">
-                    <span class="text-3xl">🏠</span>
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-extrabold text-pixel-dark tracking-wide">
-                            GALERI FOTO RUMAH
-                        </h2>
-                        <p class="text-xs text-purple-700 font-semibold">Tampak Sisi Rumah: Depan, Belakang, Kiri, dan Kanan</p>
-                    </div>
-                </div>
-                <span class="pixel-tag bg-pixel-yellow px-3 py-1 text-xs font-bold text-pixel-dark">
-                    QUEST: HOME TOUR
-                </span>
-            </div>
-
-            <!-- 4 Grid Foto Rumah Sisi Depan, Belakang, Kiri, Kanan -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                
-                <!-- 1. Sisi Depan -->
-                <div class="pixel-card-sm bg-white p-3 space-y-2 group">
-                    <div class="aspect-4/3 overflow-hidden border-2 border-pixel-dark relative">
-                        <img 
-                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" 
-                            alt="Foto Sisi Depan Rumah" 
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                        >
-                        <span class="pixel-tag absolute top-2 left-2 bg-pixel-yellow px-2 py-0.5 text-xs font-bold text-pixel-dark">
-                            [1] SISI DEPAN
-                        </span>
-                    </div>
-                    <div class="pt-1">
-                        <h3 class="font-bold text-sm text-pixel-dark">Tampak Depan Rumah</h3>
-                        <p class="text-xs text-slate-500 font-retro text-base">Fasad utama, pintu gerbang, dan teras</p>
-                    </div>
-                </div>
-
-                <!-- 2. Sisi Belakang -->
-                <div class="pixel-card-sm bg-white p-3 space-y-2 group">
-                    <div class="aspect-4/3 overflow-hidden border-2 border-pixel-dark relative">
-                        <img 
-                            src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&q=80&w=800" 
-                            alt="Foto Sisi Belakang Rumah" 
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                        >
-                        <span class="pixel-tag absolute top-2 left-2 bg-pixel-pink px-2 py-0.5 text-xs font-bold text-white">
-                            [2] SISI BELAKANG
-                        </span>
-                    </div>
-                    <div class="pt-1">
-                        <h3 class="font-bold text-sm text-pixel-dark">Tampak Belakang Rumah</h3>
-                        <p class="text-xs text-slate-500 font-retro text-base">Halaman belakang, taman mini, dan jemuran</p>
-                    </div>
-                </div>
-
-                <!-- 3. Sisi Kiri -->
-                <div class="pixel-card-sm bg-white p-3 space-y-2 group">
-                    <div class="aspect-4/3 overflow-hidden border-2 border-pixel-dark relative">
-                        <img 
-                            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=800" 
-                            alt="Foto Sisi Kiri Rumah" 
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                        >
-                        <span class="pixel-tag absolute top-2 left-2 bg-pixel-cyan px-2 py-0.5 text-xs font-bold text-pixel-dark">
-                            [3] SISI KIRI
-                        </span>
-                    </div>
-                    <div class="pt-1">
-                        <h3 class="font-bold text-sm text-pixel-dark">Tampak Sisi Kiri</h3>
-                        <p class="text-xs text-slate-500 font-retro text-base">Lorong samping kiri dan jendela kamar</p>
-                    </div>
-                </div>
-
-                <!-- 4. Sisi Kanan -->
-                <div class="pixel-card-sm bg-white p-3 space-y-2 group">
-                    <div class="aspect-4/3 overflow-hidden border-2 border-pixel-dark relative">
-                        <img 
-                            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" 
-                            alt="Foto Sisi Kanan Rumah" 
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                        >
-                        <span class="pixel-tag absolute top-2 left-2 bg-pixel-green px-2 py-0.5 text-xs font-bold text-pixel-dark">
-                            [4] SISI KANAN
-                        </span>
-                    </div>
-                    <div class="pt-1">
-                        <h3 class="font-bold text-sm text-pixel-dark">Tampak Sisi Kanan</h3>
-                        <p class="text-xs text-slate-500 font-retro text-base">Area samping kanan, carport / garasi motor & mobil</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Section 3: Video Dokumentasi Rumah (Retro TV Arcade Frame) -->
-        <section class="pixel-card p-6 sm:p-8 space-y-5 bg-pixel-lightcyan/30">
-            <div class="flex items-center justify-between pb-3 border-b-4 border-dashed border-pixel-dark">
-                <div class="flex items-center gap-3">
-                    <span class="text-3xl animate-bounce">📺</span>
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-extrabold text-pixel-dark tracking-wide">
-                            RETRO TV: VIDEO RUMAH
-                        </h2>
-                        <p class="text-xs text-slate-600 font-semibold">Video dokumentasi kondisi keliling rumah</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <span class="w-3 h-3 rounded-full bg-red-500 border border-pixel-dark animate-pulse"></span>
-                    <span class="text-xs font-bold text-red-600">REC</span>
-                </div>
-            </div>
-
-            <!-- Frame Retro Arcade Monitor -->
-            <div class="bg-pixel-dark p-3 sm:p-5 rounded-2xl border-4 border-pixel-dark shadow-[6px_6px_0px_#1e1b4b] space-y-3">
-                <div class="flex items-center justify-between text-white text-xs px-1 font-retro text-lg">
-                    <span>CH: 01 [HOME TOUR]</span>
-                    <span class="text-pixel-green">● AV IN 1080P</span>
-                </div>
-
-                <!-- Video Element -->
-                <div class="border-3 border-white/30 rounded-xl overflow-hidden bg-black">
-                    <video 
-                        controls 
-                        class="w-full max-h-[460px] mx-auto bg-black"
-                        poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200"
-                    >
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-                        <source src="video-rumah.mp4" type="video/mp4">
-                        Browser Anda tidak mendukung video HTML5.
-                    </video>
-                </div>
-
-                <!-- Arcade Controls Decoration -->
-                <div class="flex items-center justify-between pt-1 px-1">
-                    <div class="flex items-center gap-2">
-                        <span class="w-4 h-4 rounded-full bg-pixel-pink border-2 border-white inline-block"></span>
-                        <span class="w-4 h-4 rounded-full bg-pixel-yellow border-2 border-white inline-block"></span>
-                        <span class="w-4 h-4 rounded-full bg-pixel-cyan border-2 border-white inline-block"></span>
-                    </div>
-                    <span class="text-[11px] text-white/70 font-retro text-base">PRESS PLAY TO START</span>
-                </div>
-            </div>
-
-            <!-- Petunjuk Ganti Video Sendiri -->
-            <div class="pixel-card-sm bg-white p-3.5 flex items-start gap-2.5 text-xs">
-                <span class="text-lg">💡</span>
-                <div>
-                    <span class="font-bold text-purple-900 block">Cara Pakai Video Sendiri:</span>
-                    <p class="text-slate-600 font-retro text-base">
-                        Simpan file video rekaman Anda dengan nama <code class="bg-pixel-lightpink px-1.5 py-0.5 border border-pixel-dark font-bold text-pixel-dark">video-rumah.mp4</code> di folder yang sama dengan file <code class="bg-pixel-lightyellow px-1.5 py-0.5 border border-pixel-dark font-bold text-pixel-dark">index.html</code>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer Retro Pixel -->
-    <footer class="bg-white border-t-4 border-pixel-dark py-6 text-center text-xs text-slate-700">
-        <div class="max-w-5xl mx-auto px-4 space-y-1">
-            <p class="font-bold text-pixel-dark text-sm">
-                👾 2024 MUHAMMAD RIZKY PRATAMA • ALL RIGHTS RESERVED 👾
-            </p>
-            <p class="text-[11px] text-purple-700 font-retro text-base">
-                BUILT WITH HTML5 & TAILWIND CSS • PIXEL ART RETRO STYLE
-            </p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- Retro Audio Synthesizer (Zero external dependency, pure Web Audio API!) -->
-    <script>
-        function playRetroSound() {
-            try {
-                const ctx = new (window.AudioContext || window.webkitAudioContext)();
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-                
-                osc.type = 'square';
-                osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
-                osc.frequency.setValueAtTime(880, ctx.currentTime + 0.08); // A5
-                
-                gain.gain.setValueAtTime(0.1, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
-                
-                osc.connect(gain);
-                gain.connect(ctx.destination);
-                
-                osc.start();
-                osc.stop(ctx.currentTime + 0.25);
-            } catch (e) {
-                // audio context maybe blocked until user gesture
-            }
-        }
+    <!-- ====================================================================
+         3. HOBI & MINAT
+         ==================================================================== -->
+    <section class="section-padding section-bg-white" id="hobi">
+      <div class="container">
+        <!-- Judul Section -->
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fa-solid fa-heart"></i> Minat & Aktivitas</span>
+          <h2 class="section-title">Hobi & Minat</h2>
+          <p class="section-subtitle">
+            Aktivitas yang saya sukai untuk menyeimbangkan pikiran, memperluas sudut pandang, dan menunjang pengembangan diri.
+          </p>
+          <div class="title-underline"></div>
+        </div>
 
-        // Add cute retro sound to all interactive tags & buttons
-        document.querySelectorAll('.pixel-tag, .pixel-btn').forEach(elem => {
-            elem.addEventListener('click', () => {
-                playRetroSound();
-            });
-        });
-    </script>
+        <!-- Card Grid Hobi (3 Hobi Utama) -->
+        <div class="hobi-grid">
+          <!-- Hobi 1: Mendengarkan Musik -->
+          <div class="hobi-card reveal delay-1">
+            <div class="hobi-header-row">
+              <div class="hobi-icon">
+                <i class="fa-solid fa-headphones"></i>
+              </div>
+              <span class="hobi-tag">Fokus & Relaksasi</span>
+            </div>
+            <h3 class="hobi-title">Mendengarkan Musik</h3>
+            <p class="hobi-desc">
+              Mendengarkan musik membantu menenangkan pikiran dan memulihkan energi mental setelah seharian beraktivitas. Alunan melodi yang tepat terbukti efektif meredakan ketegangan, meningkatkan daya konsentrasi saat belajar, serta menjaga <i>mood</i> tetap positif dan produktif.
+            </p>
+          </div>
+
+          <!-- Hobi 2: Membaca Buku -->
+          <div class="hobi-card reveal delay-2">
+            <div class="hobi-header-row">
+              <div class="hobi-icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <span class="hobi-tag">Literasi & Analisis</span>
+            </div>
+            <h3 class="hobi-title">Membaca Buku</h3>
+            <p class="hobi-desc">
+              Membaca melatih daya ingat dan rentang fokus agar tidak mudah terdistraksi. Kebiasaan ini memperkaya perbendaharaan kata, memperdalam wawasan seputar ilmu sosial ekonomi, serta melatih kemampuan <i>critical thinking</i> dalam menelaah permasalahan secara objektif.
+            </p>
+          </div>
+
+          <!-- Hobi 3: Menonton Film -->
+          <div class="hobi-card reveal delay-3">
+            <div class="hobi-header-row">
+              <div class="hobi-icon">
+                <i class="fa-solid fa-film"></i>
+              </div>
+              <span class="hobi-tag">Observasi & Empati</span>
+            </div>
+            <h3 class="hobi-title">Menonton Film</h3>
+            <p class="hobi-desc">
+              Menonton film menjadi sarana observasi terhadap berbagai realitas kehidupan dan karakter manusia. Melalui alur cerita yang bermakna, saya bisa mengasah <i>emotional intelligence</i>, memahami sudut pandang orang lain, dan melihat beragam cara penyelesaian konflik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. RUMAH SAYA (GALERI 4 SISI)
+         ==================================================================== -->
+    <section class="section-padding section-bg-alt" id="rumah">
+      <div class="container">
+        <!-- Judul Section -->
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fa-solid fa-house"></i> Dokumentasi Tempat Tinggal</span>
+          <h2 class="section-title">Rumah Saya</h2>
+          <p class="section-subtitle">
+            Galeri foto rumah yang menampilkan 4 sisi bangunan: Tampak Depan, Belakang, Samping Kiri, dan Samping Kanan. Klik foto untuk melihat tampilan besar.
+          </p>
+          <div class="title-underline"></div>
+        </div>
+
+        <!-- Grid 2x2 Foto Rumah (Di Layar HP menjadi 1 Kolom) -->
+        <div class="gallery-grid">
+          <!-- Sisi 1: Tampak Depan -->
+          <div class="gallery-card reveal delay-1" data-index="0">
+            <div class="gallery-img-container">
+              <span class="gallery-corner-tag">
+                <i class="fa-solid fa-camera"></i> Tampak Depan
+              </span>
+              <img 
+                src="assets/rumah_depan.jpg" 
+                alt="Rumah Tampak Depan" 
+                class="gallery-img"
+                onerror="this.onerror=null; this.src='assets/rumah_depan.svg';"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-badge">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
+                </span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-side-title">
+                <i class="fa-solid fa-door-open text-primary"></i> Tampak Depan
+              </h3>
+            </div>
+          </div>
+
+          <!-- Sisi 2: Tampak Belakang -->
+          <div class="gallery-card reveal delay-2" data-index="1">
+            <div class="gallery-img-container">
+              <span class="gallery-corner-tag">
+                <i class="fa-solid fa-camera"></i> Tampak Belakang
+              </span>
+              <img 
+                src="assets/rumah_belakang.jpg" 
+                alt="Rumah Tampak Belakang" 
+                class="gallery-img"
+                onerror="this.onerror=null; this.src='assets/rumah_belakang.svg';"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-badge">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
+                </span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-side-title">
+                <i class="fa-solid fa-tree text-primary"></i> Tampak Belakang
+              </h3>
+            </div>
+          </div>
+
+          <!-- Sisi 3: Tampak Samping Kiri -->
+          <div class="gallery-card reveal delay-3" data-index="2">
+            <div class="gallery-img-container">
+              <span class="gallery-corner-tag">
+                <i class="fa-solid fa-camera"></i> Tampak Samping Kiri
+              </span>
+              <img 
+                src="assets/rumah_kiri.jpg" 
+                alt="Rumah Tampak Samping Kiri" 
+                class="gallery-img"
+                onerror="this.onerror=null; this.src='assets/rumah_kiri.svg';"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-badge">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
+                </span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-side-title">
+                <i class="fa-solid fa-road text-primary"></i> Tampak Samping Kiri
+              </h3>
+            </div>
+          </div>
+
+          <!-- Sisi 4: Tampak Samping Kanan -->
+          <div class="gallery-card reveal delay-4" data-index="3">
+            <div class="gallery-img-container">
+              <span class="gallery-corner-tag">
+                <i class="fa-solid fa-camera"></i> Tampak Samping Kanan
+              </span>
+              <img 
+                src="assets/rumah_kanan.jpg" 
+                alt="Rumah Tampak Samping Kanan" 
+                class="gallery-img"
+                onerror="this.onerror=null; this.src='assets/rumah_kanan.svg';"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-badge">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
+                </span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-side-title">
+                <i class="fa-solid fa-car text-primary"></i> Tampak Samping Kanan
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL (TAMPILAN BESAR GALERI) -->
+    <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog" aria-label="Penampil Foto Rumah">
+      <button class="lightbox-btn lightbox-close" id="lightboxCloseBtn" aria-label="Tutup Tampilan Foto">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <button class="lightbox-btn lightbox-nav lightbox-prev" id="lightboxPrevBtn" aria-label="Foto Sebelumnya">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="lightbox-content">
+        <div class="lightbox-img-wrapper">
+          <img src="" alt="Tampilan Foto Besar" id="lightboxImage" class="lightbox-img">
+        </div>
+        <div class="lightbox-caption-box">
+          <div>
+            <div class="lightbox-title" id="lightboxTitle">Tampak Rumah</div>
+            <div class="lightbox-caption-text" id="lightboxCaption">Deskripsi foto</div>
+          </div>
+          <span class="lightbox-counter" id="lightboxCounter">1 / 4</span>
+        </div>
+      </div>
+
+      <button class="lightbox-btn lightbox-nav lightbox-next" id="lightboxNextBtn" aria-label="Foto Selanjutnya">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- ====================================================================
+         5. VIDEO PROFIL
+         ==================================================================== -->
+    <section class="section-padding section-bg-white" id="video">
+      <div class="container">
+        <!-- Judul Section -->
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fa-solid fa-circle-play"></i> Media & Dokumentasi</span>
+          <h2 class="section-title">Video Perkenalan</h2>
+          <p class="section-subtitle">
+            Simak video perkenalan diri, sekilas aktivitas keseharian, serta tur suasana lingkungan rumah saya.
+          </p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="video-section-wrapper reveal">
+          <!-- Tombol Pemilih Mode Video: Video Lokal (MP4) / YouTube -->
+          <div class="video-tab-controls">
+            <button class="video-tab-btn active" id="btnTabLocal">
+              <i class="fa-solid fa-file-video"></i> Video Lokal (MP4)
+            </button>
+            <button class="video-tab-btn" id="btnTabYoutube">
+              <i class="fa-brands fa-youtube"></i> Video YouTube (Iframe)
+            </button>
+          </div>
+
+          <div class="video-player-card">
+            <!-- 1. Pemutar Video Lokal Menggunakan Tag <video> -->
+            <div class="video-container" id="localVideoContainer">
+              <!-- 
+                PETUNJUK VIDEO:
+                Simpan file video Anda ke dalam folder: assets/nama_video.mp4 atau assets/video_profil.mp4
+                Atribut poster mengambil gambar sampul: assets/video_poster.svg (atau .jpg)
+              -->
+              <video 
+                id="mainVideoPlayer"
+                class="video-element" 
+                controls 
+                preload="metadata"
+                poster="assets/video_poster.jpg"
+              >
+                <source src="assets/nama_video.mp4" type="video/mp4">
+                <source src="assets/video_profil.mp4" type="video/mp4">
+                Browser Anda belum mendukung pemutaran video HTML5. Silakan perbarui peramban Anda.
+              </video>
+            </div>
+
+            <!-- 2. Pemutar YouTube Menggunakan <iframe> (Opsional) -->
+            <div class="video-container" id="youtubeVideoContainer" style="display: none;">
+              <!-- Masukkan link embed YouTube Anda pada atribut src di bawah -->
+              <iframe 
+                id="youtubeIframe"
+                class="video-iframe-embed" 
+                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?enablejsapi=1" 
+                title="Video Perkenalan YouTube" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <!-- Keterangan & Deskripsi Video -->
+            <div class="video-meta-box">
+              <div class="video-title-row">
+                <h3 class="video-heading">Perkenalan Singkat & Tur Suasana Rumah</h3>
+                <span class="video-quality-badge">
+                  <i class="fa-solid fa-video"></i> Kualitas HD 1080p
+                </span>
+              </div>
+              <p class="video-description-text">
+                Video dokumentasi ini menyajikan perkenalan diri secara langsung, penjelasan singkat mengenai minat di bidang teknologi informasi, serta gambaran sudut tempat tinggal yang menunjang suasana belajar tetap produktif dan kondusif.
+              </p>
+
+              <!-- Fitur Video Responsif -->
+              <div class="video-features-row">
+                <span class="video-feature-item">
+                  <i class="fa-solid fa-mobile-screen"></i> Responsif di Semua Layar
+                </span>
+                <span class="video-feature-item">
+                  <i class="fa-solid fa-volume-high"></i> Audio Jernih
+                </span>
+                <span class="video-feature-item">
+                  <i class="fa-solid fa-expand"></i> Mendukung Layar Penuh (Fullscreen)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. KONTAK SAYA
+         ==================================================================== -->
+    <section class="section-padding section-bg-alt" id="kontak">
+      <div class="container">
+        <!-- Judul Section -->
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fa-regular fa-paper-plane"></i> Hubungi Saya</span>
+          <h2 class="section-title">Kontak & Media Sosial</h2>
+          <p class="section-subtitle">
+            Punya pertanyaan, tawaran kolaborasi, atau sekadar ingin bertegur sapa? Silakan hubungi saya melalui jalur komunikasi di bawah ini.
+          </p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="kontak-grid">
+          <!-- Kolom 1: Kartu Informasi Kontak & Tombol Medsos -->
+          <div class="kontak-info-card reveal delay-1">
+            <div>
+              <h3 class="kontak-card-title">Mari Terhubung</h3>
+              <p class="kontak-card-desc">
+                Saya selalu terbuka untuk berdiskusi seputar pemrograman, proyek kreatif, maupun peluang belajar baru.
+              </p>
+
+              <div class="kontak-items-list">
+                <!-- Email -->
+                <a href="mailto:nabilaravalia008@gmail.com" class="kontak-item">
+                  <div class="kontak-icon-circle">
+                    <i class="fa-regular fa-envelope"></i>
+                  </div>
+                  <div class="kontak-item-texts">
+                    <span class="kontak-item-label">Alamat Email</span>
+                    <span class="kontak-item-value">nabilaravalia008@gmail.com</span>
+                  </div>
+                </a>
+
+                <!-- Nomor HP / WhatsApp -->
+                <a href="https://wa.me/6287846312497" target="_blank" rel="noopener noreferrer" class="kontak-item">
+                  <div class="kontak-icon-circle">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </div>
+                  <div class="kontak-item-texts">
+                    <span class="kontak-item-label">Nomor WhatsApp / HP</span>
+                    <span class="kontak-item-value">087846312497</span>
+                  </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/nabila.andini28" target="_blank" rel="noopener noreferrer" class="kontak-item">
+                  <div class="kontak-icon-circle">
+                    <i class="fa-brands fa-instagram"></i>
+                  </div>
+                  <div class="kontak-item-texts">
+                    <span class="kontak-item-label">Akun Instagram</span>
+                    <span class="kontak-item-value">@nabila.andini28</span>
+                  </div>
+                </a>
+
+                <!-- Alamat Domisili -->
+                <div class="kontak-item">
+                  <div class="kontak-icon-circle">
+                    <i class="fa-solid fa-map-pin"></i>
+                  </div>
+                  <div class="kontak-item-texts">
+                    <span class="kontak-item-label">Lokasi Domisili</span>
+                    <span class="kontak-item-value">Komp. Pondok Kopi No. 6B JL. RO. Ulin Loktabat Selatan, Banjarbaru</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tombol Media Sosial Berwarna Biru -->
+            <div class="sosmed-box">
+              <h4 class="sosmed-title">Media Sosial Resmi</h4>
+              <div class="sosmed-buttons-grid">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6287846312497" target="_blank" rel="noopener noreferrer" class="sosmed-btn" aria-label="WhatsApp">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/nabila.andini28" target="_blank" rel="noopener noreferrer" class="sosmed-btn" aria-label="Instagram @nabila.andini28">
+                  <i class="fa-brands fa-instagram"></i>
+                  <span>@nabila.andini28</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="sosmed-btn" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="sosmed-btn" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="sosmed-btn" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                  <span>YouTube</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Formulir Kirim Pesan Cepat -->
+          <div class="kontak-form-card reveal delay-2">
+            <h3 class="kontak-card-title">Kirimkan Pesan</h3>
+            <p class="kontak-card-desc">
+              Tuliskan pesan Anda secara langsung melalui formulir berikut ini.
+            </p>
+
+            <div class="form-alert success" id="contactSuccessAlert">
+              <i class="fa-solid fa-circle-check"></i> Terima kasih! Pesan Anda telah berhasil dikirimkan.
+            </div>
+
+            <form id="contactForm" onsubmit="return false;">
+              <div class="form-group">
+                <label for="senderName" class="form-label">Nama Lengkap Anda</label>
+                <input type="text" id="senderName" class="form-control" placeholder="Masukkan nama lengkap Anda..." required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail" class="form-label">Alamat Email Anda</label>
+                <input type="email" id="senderEmail" class="form-control" placeholder="nama@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderSubject" class="form-label">Subjek Pesan</label>
+                <input type="text" id="senderSubject" class="form-control" placeholder="Contoh: Sapaan Hangat / Tawaran Kolaborasi" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">Isi Pesan</label>
+                <textarea id="senderMessage" class="form-control" rows="4" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+              </div>
+
+              <button type="submit" id="btnSubmitForm" class="btn btn-blue" style="width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Kirim Pesan Sekarang</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <span>Nabila Revalia Andini</span>
+        </div>
+
+        <nav class="footer-nav">
+          <a href="#beranda">Beranda</a>
+          <a href="#biodata">Biodata</a>
+          <a href="#hobi">Hobi</a>
+          <a href="#rumah">Rumah Saya</a>
+          <a href="#video">Video</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Nabila Revalia Andini. Dibuat dengan <span class="footer-heart">❤️</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       TOMBOL KEMBALI KE ATAS (BACK TO TOP)
+       ====================================================================== -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Kembali ke Bagian Atas Halaman">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- File JavaScript Interaktif -->
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="skyGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DCEBFF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="wallGradLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EDF2F7"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#skyGrad3)"/>
+  
+  <!-- Ground -->
+  <rect y="440" width="800" height="160" fill="#CBD5E1"/>
+  <rect y="480" width="800" height="120" fill="#94A3B8"/>
+
+  <!-- Left Side Wall Perspective -->
+  <polygon points="260,200 580,240 580,450 260,440" fill="url(#wallGradLeft)" stroke="#0A2540" stroke-width="4"/>
+  
+  <!-- Side Roof -->
+  <polygon points="230,190 420,100 590,230 260,200" fill="#1E6FD9" stroke="#0A2540" stroke-width="4"/>
+  
+  <!-- Side Windows -->
+  <polygon points="310,260 370,267 370,350 310,345" fill="#DCEBFF" stroke="#0A2540" stroke-width="3"/>
+  <polygon points="450,275 510,282 510,360 450,355" fill="#DCEBFF" stroke="#0A2540" stroke-width="3"/>
+
+  <!-- Side Pathway / Garden Stepping Stones -->
+  <ellipse cx="200" cy="510" rx="35" ry="15" fill="#64748B"/>
+  <ellipse cx="280" cy="530" rx="40" ry="18" fill="#64748B"/>
+  <ellipse cx="380" cy="520" rx="38" ry="16" fill="#64748B"/>
+  <ellipse cx="480" cy="535" rx="42" ry="18" fill="#64748B"/>
+  
+  <!-- Side Garden Hedge -->
+  <rect x="180" y="420" width="70" height="40" rx="10" fill="#22C55E"/>
+  <circle cx="215" cy="410" r="25" fill="#16A34A"/>
+
+  <!-- Label Badge -->
+  <rect x="230" y="30" width="340" height="50" rx="25" fill="#0A2540"/>
+  <text x="400" y="62" text-anchor="middle" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-weight="600" font-size="20">🏠 TAMPAK SAMPING KIRI</text>
+  <text x="400" y="580" text-anchor="middle" fill="#0A2540" font-family="'Poppins', sans-serif" font-weight="500" font-size="16">Ganti dengan file: assets/rumah_kiri.jpg</text>
+</svg>

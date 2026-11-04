@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="skyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DCEBFF"/>
+      <stop offset="100%" stop-color="#F0F7FF"/>
+    </linearGradient>
+    <linearGradient id="roofGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2540"/>
+      <stop offset="100%" stop-color="#1E6FD9"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#skyGrad2)"/>
+  
+  <!-- Back Garden Ground -->
+  <rect y="430" width="800" height="170" fill="#86EFAC"/>
+  <rect y="480" width="800" height="120" fill="#4ADE80"/>
+
+  <!-- House Back Body -->
+  <rect x="230" y="250" width="340" height="210" fill="#FFFFFF" stroke="#0A2540" stroke-width="4" rx="6"/>
+  
+  <!-- Back Roof -->
+  <polygon points="400,120 190,250 610,250" fill="url(#roofGrad2)" stroke="#0A2540" stroke-width="4"/>
+  
+  <!-- Back Glass Sliding Doors -->
+  <rect x="330" y="320" width="140" height="140" fill="#DCEBFF" stroke="#0A2540" stroke-width="4" rx="4"/>
+  <line x1="400" y1="320" x2="400" y2="460" stroke="#0A2540" stroke-width="3"/>
+  <line x1="330" y1="390" x2="470" y2="390" stroke="#1E6FD9" stroke-width="2"/>
+
+  <!-- Back Windows -->
+  <rect x="260" y="300" width="50" height="70" fill="#DCEBFF" stroke="#1E6FD9" stroke-width="3" rx="3"/>
+  <rect x="490" y="300" width="50" height="70" fill="#DCEBFF" stroke="#1E6FD9" stroke-width="3" rx="3"/>
+
+  <!-- Patio Deck & Outdoor Umbrella -->
+  <rect x="300" y="460" width="200" height="30" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2" rx="4"/>
+  
+  <!-- Back Garden Trees & Fence -->
+  <line x1="120" y1="420" x2="120" y2="460" stroke="#0A2540" stroke-width="4"/>
+  <line x1="150" y1="420" x2="150" y2="460" stroke="#0A2540" stroke-width="4"/>
+  <line x1="180" y1="420" x2="180" y2="460" stroke="#0A2540" stroke-width="4"/>
+  <line x1="620" y1="420" x2="620" y2="460" stroke="#0A2540" stroke-width="4"/>
+  <line x1="650" y1="420" x2="650" y2="460" stroke="#0A2540" stroke-width="4"/>
+  <circle cx="150" cy="380" r="45" fill="#15803D"/>
+  <circle cx="650" cy="370" r="50" fill="#16A34A"/>
+
+  <!-- Label Badge -->
+  <rect x="230" y="30" width="340" height="50" rx="25" fill="#0A2540"/>
+  <text x="400" y="62" text-anchor="middle" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-weight="600" font-size="20">🌳 TAMPAK BELAKANG RUMAH</text>
+  <text x="400" y="580" text-anchor="middle" fill="#0A2540" font-family="'Poppins', sans-serif" font-weight="500" font-size="16">Ganti dengan file: assets/rumah_belakang.jpg</text>
+</svg>

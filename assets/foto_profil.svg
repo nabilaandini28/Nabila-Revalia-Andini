@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2540"/>
+      <stop offset="50%" stop-color="#144272"/>
+      <stop offset="100%" stop-color="#1E6FD9"/>
+    </linearGradient>
+    <linearGradient id="hijabGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E0E7FF"/>
+    </linearGradient>
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFDFBA"/>
+      <stop offset="100%" stop-color="#F5CBA7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0A2540" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Latar Belakang -->
+  <rect width="400" height="400" fill="#DCEBFF"/>
+  <circle cx="200" cy="200" r="180" fill="url(#avatarGrad)" filter="url(#shadow)"/>
+  <circle cx="200" cy="200" r="172" fill="#FFFFFF" fill-opacity="0.08"/>
+
+  <!-- Lingkar Luar Hijab / Kerudung Elegan -->
+  <path d="M125 180 C125 90, 275 90, 275 180 C275 240, 295 310, 310 340 C280 345, 120 345, 90 340 C105 310, 125 240, 125 180 Z" fill="url(#hijabGrad)"/>
+
+  <!-- Bentuk Wajah -->
+  <path d="M155 170 C155 130, 245 130, 245 170 C245 210, 225 235, 200 235 C175 235, 155 210, 155 170 Z" fill="url(#faceGrad)"/>
+
+  <!-- Lipatan Hijab Bagian Bahu & Dada -->
+  <path d="M140 250 C170 235, 230 235, 260 250 C290 300, 310 340, 310 340 C280 345, 120 345, 90 340 C90 340, 110 300, 140 250 Z" fill="#EEF2FF"/>
+  <path d="M185 235 C195 250, 205 250, 215 235 C208 275, 192 275, 185 235 Z" fill="#CBD5E1" opacity="0.6"/>
+
+  <!-- Bingkai Biru Memikat -->
+  <circle cx="200" cy="200" r="185" fill="none" stroke="#1E6FD9" stroke-width="8"/>
+  <circle cx="200" cy="200" r="177" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8"/>
+
+  <!-- Keterangan Nama Singkat -->
+  <rect x="110" y="352" width="180" height="30" rx="15" fill="#0A2540"/>
+  <text x="200" y="372" text-anchor="middle" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-weight="600" font-size="13" letter-spacing="0.5">NABILA REVALIA A.</text>
+</svg>

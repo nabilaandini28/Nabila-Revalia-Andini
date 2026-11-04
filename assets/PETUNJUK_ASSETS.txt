@@ -1,0 +1,36 @@
+====================================================================
+PANDUAN PENGISIAN FOTO & VIDEO DALAM FOLDER ASSETS
+====================================================================
+
+Folder ini digunakan untuk menyimpan seluruh media foto dan video
+yang akan tampil di website Biodata Diri (Personal Profile).
+
+1. FOTO PROFIL
+   - Nama file: foto_profil.jpg (atau foto_profil.png)
+   - Ukuran rekomendasi: Persegi (1:1), misalnya 500x500 pixel.
+   - Posisi di web: Tampil di Hero Section (Beranda) dengan bingkai lingkaran biru.
+
+2. FOTO RUMAH (GALERI 4 SISI)
+   - Tampak Depan:
+     Simpan dengan nama: rumah_depan.jpg
+   - Tampak Belakang:
+     Simpan dengan nama: rumah_belakang.jpg
+   - Tampak Samping Kiri:
+     Simpan dengan nama: rumah_kiri.jpg
+   - Tampak Samping Kanan:
+     Simpan dengan nama: rumah_kanan.jpg
+   - Ukuran rekomendasi: Landscape (rasio 4:3 atau 16:9), resolusi minimal 800x600 px.
+
+3. VIDEO
+   - Nama file: video_profil.mp4 (atau nama_video.mp4)
+   - Format: MP4 (H.264 video codec, AAC audio)
+   - Thumbnail/Poster: video_poster.jpg (opsional, jika ingin mengganti gambar sampul)
+   - CATATAN YOUTUBE: Jika ingin memakai video dari YouTube, Anda tidak perlu menaruh
+     file MP4 di sini! Cukup buka file index.html, cari bagian id="video", dan masukkan
+     link/ID YouTube Anda pada iframe yang telah disediakan.
+
+* TIPS:
+Saat ini website sudah dilengkapi gambar placeholder SVG bawaan
+sehingga website sudah langsung tampil cantik dan rapi saat dibuka pertama kali.
+Cukup masukkan foto dan video asli Anda dengan nama file di atas untuk menggantinya!
+====================================================================

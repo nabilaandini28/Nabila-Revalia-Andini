@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="skyGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DCEBFF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="wallGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#skyGrad4)"/>
+  
+  <!-- Ground (Paving / Carport) -->
+  <rect y="440" width="800" height="160" fill="#CBD5E1"/>
+  <rect y="480" width="800" height="120" fill="#94A3B8"/>
+
+  <!-- Right Side Wall Perspective -->
+  <polygon points="220,240 540,200 540,440 220,450" fill="url(#wallGradRight)" stroke="#0A2540" stroke-width="4"/>
+  
+  <!-- Side Roof -->
+  <polygon points="210,230 380,100 570,190 220,240" fill="#1E6FD9" stroke="#0A2540" stroke-width="4"/>
+  
+  <!-- Carport Canopy / Pergola -->
+  <line x1="140" y1="340" x2="320" y2="340" stroke="#0A2540" stroke-width="6"/>
+  <line x1="150" y1="340" x2="150" y2="460" stroke="#0A2540" stroke-width="6"/>
+  <line x1="280" y1="340" x2="280" y2="460" stroke="#0A2540" stroke-width="6"/>
+  <polygon points="120,335 340,320 340,340 120,350" fill="#DCEBFF" fill-opacity="0.8" stroke="#1E6FD9" stroke-width="3"/>
+
+  <!-- Side Windows & Ventilation -->
+  <polygon points="430,265 490,260 490,345 430,350" fill="#DCEBFF" stroke="#0A2540" stroke-width="3"/>
+  <rect x="360" y="270" width="40" height="30" fill="#DCEBFF" stroke="#0A2540" stroke-width="2"/>
+
+  <!-- Paving Pattern Lines -->
+  <line x1="100" y1="520" x2="700" y2="520" stroke="#64748B" stroke-dasharray="15,15" stroke-width="3"/>
+  <line x1="100" y1="550" x2="700" y2="550" stroke="#64748B" stroke-dasharray="15,15" stroke-width="3"/>
+
+  <!-- Label Badge -->
+  <rect x="220" y="30" width="360" height="50" rx="25" fill="#0A2540"/>
+  <text x="400" y="62" text-anchor="middle" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-weight="600" font-size="20">🚗 TAMPAK SAMPING KANAN</text>
+  <text x="400" y="580" text-anchor="middle" fill="#0A2540" font-family="'Poppins', sans-serif" font-weight="500" font-size="16">Ganti dengan file: assets/rumah_kanan.jpg</text>
+</svg>

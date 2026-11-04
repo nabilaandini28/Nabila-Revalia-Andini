@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DCEBFF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2540"/>
+      <stop offset="100%" stop-color="#1E6FD9"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#skyGrad)"/>
+  
+  <!-- Ground -->
+  <rect y="440" width="800" height="160" fill="#E2F0D9"/>
+  <rect y="470" width="800" height="130" fill="#B0D59D"/>
+
+  <!-- House Main Body -->
+  <rect x="220" y="240" width="360" height="220" fill="#FFFFFF" stroke="#0A2540" stroke-width="4" rx="6"/>
+  
+  <!-- Roof -->
+  <polygon points="400,100 180,240 620,240" fill="url(#roofGrad)" stroke="#0A2540" stroke-width="4"/>
+  
+  <!-- Door -->
+  <rect x="360" y="320" width="80" height="140" fill="#0A2540" rx="4"/>
+  <circle cx="425" cy="390" r="5" fill="#FFD700"/>
+
+  <!-- Windows -->
+  <rect x="260" y="280" width="70" height="80" fill="#DCEBFF" stroke="#1E6FD9" stroke-width="4" rx="4"/>
+  <line x1="295" y1="280" x2="295" y2="360" stroke="#1E6FD9" stroke-width="3"/>
+  <line x1="260" y1="320" x2="330" y2="320" stroke="#1E6FD9" stroke-width="3"/>
+
+  <rect x="470" y="280" width="70" height="80" fill="#DCEBFF" stroke="#1E6FD9" stroke-width="4" rx="4"/>
+  <line x1="505" y1="280" x2="505" y2="360" stroke="#1E6FD9" stroke-width="3"/>
+  <line x1="470" y1="320" x2="540" y2="320" stroke="#1E6FD9" stroke-width="3"/>
+
+  <!-- Front Porch & Path -->
+  <polygon points="340,460 460,460 490,560 310,560" fill="#CBD5E1"/>
+
+  <!-- Plants -->
+  <circle cx="210" cy="440" r="30" fill="#22C55E"/>
+  <circle cx="590" cy="440" r="30" fill="#22C55E"/>
+
+  <!-- Label Badge -->
+  <rect x="240" y="30" width="320" height="50" rx="25" fill="#0A2540"/>
+  <text x="400" y="62" text-anchor="middle" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-weight="600" font-size="20">🏡 TAMPAK DEPAN RUMAH</text>
+  <text x="400" y="580" text-anchor="middle" fill="#0A2540" font-family="'Poppins', sans-serif" font-weight="500" font-size="16">Ganti dengan file: assets/rumah_depan.jpg</text>
+</svg>
